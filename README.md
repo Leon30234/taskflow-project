@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TaskFlow
 
 Aplicación de gestión de tareas construida con HTML, CSS y JavaScript puro.
@@ -60,3 +61,6 @@ taskflow/
 ## Despliegue
 
 El proyecto está desplegado en Vercel con despliegue automático desde la rama `main`.
+=======
+# taskflow-project
+>>>>>>> 47695e6aabd7b948190676019b2da9562f64bda4
