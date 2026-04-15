@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="app">
+
+    <!-- CABECERA -->
+    <header>
+      <div class="logo">Task<span>Flow</span></div>
+      <div class="header-actions">
+        <button class="btn-icon" id="btn-dark" title="Modo oscuro" aria-label="Alternar modo oscuro">🌙</button>
+      </div>
+    </header>
+
+    <!-- ESTADÍSTICAS -->
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-label">Total</div>
+        <div class="stat-value" id="s-total">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Pendientes</div>
+        <div class="stat-value" id="s-pending">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Completadas</div>
+        <div class="stat-value" id="s-done">0</div>
+      </div>
+    </div>
+
+    <!-- FORMULARIO AÑADIR TAREA -->
+    <div class="add-form">
+      <select class="priority-sel" id="priority-sel" aria-label="Prioridad de la tarea">
+        <option value="media">Media</option>
+        <option value="alta">Alta</option>
+        <option value="baja">Baja</option>
+      </select>
+      <input
+        type="text"
+        id="task-input"
+        placeholder="Añadir nueva tarea…"
+        aria-label="Título de la tarea"
+        maxlength="120"
+      />
+      <button class="btn-add" id="btn-add" aria-label="Añadir tarea">Añadir</button>
+    </div>
+
+    <!-- BARRA DE BÚSQUEDA Y FILTROS -->
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M11 11l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <input
+          class="search-input"
+          id="search-input"
+          placeholder="Buscar tareas…"
+          aria-label="Buscar tareas"
+        />
+      </div>
+      <div class="filters" role="group" aria-label="Filtrar tareas">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="pending">Pendientes</button>
+        <button class="filter-btn" data-filter="done">Completadas</button>
+      </div>
+      <button class="btn-bulk" id="btn-complete-all" aria-label="Completar todas las tareas">✓ Todas</button>
+      <button class="btn-bulk" id="btn-clear-done" aria-label="Borrar tareas completadas">Borrar hechas</button>
+    </div>
+
+    <!-- LISTA DE TAREAS -->
+    <main>
+      <ul class="task-list" id="task-list" aria-live="polite" aria-label="Lista de tareas"></ul>
+    </main>
+
+    <!-- BARRA DE PROGRESO -->
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar">
+      <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+    <div class="progress-label" id="progress-label">0% completado</div>
+
+  </div><!-- /#app -->
+
+  <script src="app.js"></script>
+</body>
+</html>
